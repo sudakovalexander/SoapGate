@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="DealPassCreditResponse">
+        <xsd:sequence>
+            <xsd:element name="reqID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SubSys" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="AnsDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="response">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" name="REF" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:documentation>Ссылка на документ</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" name="Status" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:documentation>Статус документа</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

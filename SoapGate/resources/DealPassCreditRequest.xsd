@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:abs="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:include schemaLocation="Attachments.xsd"/>
+    <xsd:include schemaLocation="NonResidentInfo.xsd"/>
+    <xsd:include schemaLocation="DpInfo.xsd"/>
+    <xsd:include schemaLocation="ContractInfo.xsd"/>
+    <xsd:include schemaLocation="DpReissueInfo.xsd"/>
+    <xsd:include schemaLocation="CreditReceipt.xsd"/>
+    <xsd:include schemaLocation="CreditTranche.xsd"/>
+    <xsd:include schemaLocation="PaymentReturn.xsd"/>
+    <xsd:complexType name="DealPassCreditRequest">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="reqID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="docNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="docId" type="xsd:string"/>
+            <xsd:element name="docDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SubSys" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="BranchId" type="xsd:string"/>
+            <xsd:element name="docBankDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Дата и время поступления в банк документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="acceptDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата приема документа к исполнению</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dealPassContractInfo" type="abs:ContractInfo">
+                <xsd:annotation>
+                    <xsd:documentation>Данные по контракту ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="credPayPeriod" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код срока привлечения (предоставления)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="debetsAmount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма фактической задолженности по основному долгу</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="deliveryType" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation>Способ доставки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="depositAmount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма залогового обеспечения</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="contrAmountTrans" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма, подлежащая зачислению на счета за рубежом</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="fixRatePercent" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Фиксированный размер процентной ставки (% годовых)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="flagPayReturn" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Признак заполнения: 0-на основании сведений из кредитного договора; 1-на основании оценочных данных
+					</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="increaseRate" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Размер процентной надбавки (% годовых)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="isDirectInvest" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>Признак наличия отношений прямого инвестирования</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="liborRate" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Код ставки ЛИБОР</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="otherPayments" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Иные платежи, предусмотренные договором</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="otherRateMehtod" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Другие методы определения процентной ставки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="returnDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата возврата</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="address" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Адрес</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="nonResidentInfo">
+                <xsd:annotation>
+                    <xsd:documentation>Реквизиты нерезидента (нерезидентов)</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:NonResidentInfo"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dpInfo">
+                <xsd:annotation>
+                    <xsd:documentation>Сведения об оформлении, переводе и закрытии ПС</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:DpInfo"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dpReissueInfo">
+                <xsd:annotation>
+                    <xsd:documentation>Сведения о переоформлении ПС</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:DpReissueInfo"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="creditTranche">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Сведения о сумме и сроках привлечения (предоставления) траншей
+					</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:CreditTranche"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="paymentReturn">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Описание графика платежей по возврату основного долга и процентных платежей
+					</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:PaymentReturn"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="creditReceipt">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Информация о привлечении резидентом кредита (займа) на синдицированной (консорциональной) основе
+					</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:CreditReceipt"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="abs:files"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

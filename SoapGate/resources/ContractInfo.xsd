@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:abs="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="ContractInfo">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="dpNum" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dpOtherBank" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер ПС, ранее оформленного по контракту</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="dpBankDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Дата ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="conNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер контракта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="conDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="isConAmount" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>С/без суммы контракта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="isConNumber" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>C/без номера контракта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="сonAmount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма контракта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="conEndDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Дата завершения исполнения обязательств по контракту
+					</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="conCurrencyCode">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Валюта контракта
+					</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="docProvisionFormat">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Способ предоставления документов для оформления ПС
+					</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="docProvisionDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Дата предоставления документов для оформления ПС
+					</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="sendTypeDoc">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Способ направления оформленного ПС
+					</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="sendDateDoc" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>
+						Дата направления оформленного ПС
+					</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ogrn" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>ОГРН резидента</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ogrnDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата ОГРН резидента</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

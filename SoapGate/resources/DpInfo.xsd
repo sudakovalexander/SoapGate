@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="DpInfo">
+        <xsd:sequence>
+            <xsd:element name="numberLine" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation>Код страны</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="regNum" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Регистрационный номер банка ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="receiveDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата принятия ПС при его переводе</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="closeDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата закрытия ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="groundCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Основание закрытия ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

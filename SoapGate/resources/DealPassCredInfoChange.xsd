@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="dpCredInfoChange">
+        <xsd:sequence>
+            <xsd:element name="credSectionDp" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Раздел ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="credItemSectionDp" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Пункт раздела ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="credSubitemSectionDp" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Подпункт раздела ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="credCurrentValue" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Текущее значение</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="credNewValue" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Новое значение</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="credDocInfo" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Основание для переоформления ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="credRecord" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Запись</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

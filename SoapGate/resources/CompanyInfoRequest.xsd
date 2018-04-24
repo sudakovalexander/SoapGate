@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="CompanyInfoRequest">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="reqID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SubSys" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerID" type="xsd:string"/>
+            <xsd:element name="ClientRef" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Внешний идентификатор клиента</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Branch" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код подразделения банка</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

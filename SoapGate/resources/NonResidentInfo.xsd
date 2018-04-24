@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="NonResidentInfo">
+        <xsd:sequence>
+            <xsd:element name="countryCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код страны</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="countryName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Наименование страны</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="nonResidentName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Наименование нерезидента</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

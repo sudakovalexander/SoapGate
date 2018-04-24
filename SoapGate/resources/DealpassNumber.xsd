@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="DealpassNumberType">
+        <xsd:sequence>
+            <xsd:element name="dealPassportNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер паспорта сделки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dealPassportDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата паспорта сделки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

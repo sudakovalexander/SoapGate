@@ -1,0 +1,1651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ABSInterface"
+                  targetNamespace="http://custsystems.com/integration/abs/ABSInterface"
+                  xmlns:tns="http://custsystems.com/integration/abs/ABSInterface"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bons1="http://custsystems.com/integration/abs"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://custsystems.com/integration/abs/ABSInterface" elementFormDefault="qualified">
+			<xsd:import namespace="http://custsystems.com/integration/abs" schemaLocation="ABSInterface.xsd" />
+			<xsd:element name="ErrorElement">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:Error" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="accacc">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:AccAccBO" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="accaccResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true"
+						             type="bons1:AccAccResponse" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="accountList">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true"
+						             type="bons1:AccountListBO" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="accountListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true"
+						             type="bons1:AccountListResponse" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cardList">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true"
+						             type="bons1:CardListBO" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cardListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true"
+						             type="bons1:CardListResponse" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="creditList">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true"
+						             type="bons1:CreditListBO" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="creditListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true"
+						             type="bons1:CreditListResponse" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="deposit">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true"
+						             type="bons1:DepositListBO" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="depositResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true"
+						             type="bons1:DepositListResponse" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="check">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CheckBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="checkResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:CheckResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cconv">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CConvBO" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cconvResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true"
+						             type="bons1:CConvResponse" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cancel">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CancelBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cancelResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:CancelResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="contractDepositCancelRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:ContractDepositCancelRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="contractDepositCancelResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:ContractDepositCancelResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="accCust">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:AccCustBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="accCustResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:AccCustResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cardCust">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CardCustBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cardCustResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:CardCustResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cust">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CustBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="custResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:CustResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="clientEmployeeInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CustBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="pupay">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:PupayBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="pupayResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:PupayResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="platpor">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:PlatporBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="platporResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:PlatporResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="pdr">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true"
+						             type="bons1:PDRBO" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="pdrResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true"
+						             type="bons1:PDRResponse" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="stm">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:StmBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="stmResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:StmResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="lastOperation">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:LastOperationBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="lastOperationResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:LastOperationResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="lastOperationInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:LastOperationInfoBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="lastOperationInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:LastOperationInfoResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="openDeposit">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:OpenDepositBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="openDepositResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:OpenDepositResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="openDepositStatus">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:OpenDepositStatusRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="openDepositStatusResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:OpenDepositStatusResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="closeDeposit">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CloseDepositBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="closeDepositResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:CloseDepositResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inqCurrRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:InqCurrRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inqCurrResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:InqCurrResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inqConfRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:InqConfRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inqConfResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:InqConfResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="dealpassCloseRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:DealpassCloseRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="dealpassCloseResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:DealpassCloseResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="dealPassRenew">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:DealPassRenewRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="dealPassRenewResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:DealPassRenewResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="dealPassCredit">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:DealPassCreditRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="dealPassCreditResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:DealPassCreditResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="dealPassContract">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:DealPassContractRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="dealPassContractResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:DealPassContractResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="paymentRequestOutgoingRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:PaymentRequestOutgoingRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="paymentRequestOutgoingResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:PaymentRequestOutgoingResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="companyInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CompanyInfoRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="companyInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:CompanyInfoResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ccrates">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:CCRatesBO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ccratesResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:CCRatesResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="paymentSchedule">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:PaymentScheduleRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="paymentScheduleResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:PaymentScheduleResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="mails2ClientList">
+				<xsd:complexType/>
+			</xsd:element>
+
+			<xsd:element name="mails2ClientListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:Mails2ClientListResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="cardInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" type="bons1:CardInfoRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="cardInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" type="bons1:CardInfoRequestResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="accInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" type="bons1:AccInfoRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="accInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" type="bons1:AccInfoRequestResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="mail2bankUL">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" nillable="true" type="bons1:Mail2bankULRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="mail2bankULResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" nillable="true" type="bons1:Mail2bankULResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="clientInfoByPhone">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="request" type="bons1:СlientInfoByPhoneRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="clientInfoByPhoneResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" type="bons1:ClientInfoByPhoneResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="accaccRequestMsg">
+		<wsdl:part name="accaccParameters" element="tns:accacc">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="accaccResponseMsg">
+		<wsdl:part name="accaccResult" element="tns:accaccResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="accaccFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="accountListRequestMsg">
+		<wsdl:part name="accountListParameters" element="tns:accountList" />
+	</wsdl:message>
+	<wsdl:message name="accountListResponseMsg">
+		<wsdl:part name="accountListResult" element="tns:accountListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="accountListFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="cardListRequestMsg">
+		<wsdl:part name="cardListParameters" element="tns:cardList" />
+	</wsdl:message>
+	<wsdl:message name="cardListResponseMsg">
+		<wsdl:part name="cardListResult" element="tns:cardListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="cardListFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="creditListRequestMsg">
+		<wsdl:part name="creditListParameters" element="tns:creditList" />
+	</wsdl:message>
+	<wsdl:message name="creditListResponseMsg">
+		<wsdl:part name="creditListResult" element="tns:creditListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="creditListFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="depositListRequestMsg">
+		<wsdl:part name="depositListParameters" element="tns:deposit" />
+	</wsdl:message>
+	<wsdl:message name="depositListResponseMsg">
+		<wsdl:part name="depositListResult" element="tns:depositResponse"/>
+	</wsdl:message>
+	<wsdl:message name="depositListFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="checkRequestMsg">
+		<wsdl:part name="checkParameters" element="tns:check" />
+	</wsdl:message>
+	<wsdl:message name="checkResponseMsg">
+		<wsdl:part name="checkResult" element="tns:checkResponse"/>
+	</wsdl:message>
+	<wsdl:message name="checkFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="cconvRequestMsg">
+		<wsdl:part name="cconvParameters" element="tns:cconv">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="cconvResponseMsg">
+		<wsdl:part name="cconvResult" element="tns:cconvResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="cconvFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="cancelRequestMsg">
+		<wsdl:part name="cancelParameters" element="tns:cancel" />
+	</wsdl:message>
+	<wsdl:message name="cancelResponseMsg">
+		<wsdl:part name="cancelResult" element="tns:cancelResponse"/>
+	</wsdl:message>
+	<wsdl:message name="cancelFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="contractDepositCancelRequestMsg">
+		<wsdl:part name="contractDepositCancelParameters" element="tns:contractDepositCancelRequest" />
+	</wsdl:message>
+	<wsdl:message name="contractDepositCancelResponseMsg">
+		<wsdl:part name="contractDepositCancelResult" element="tns:contractDepositCancelResponse"/>
+	</wsdl:message>
+	<wsdl:message name="contractDepositCancelFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="accCustRequestMsg">
+		<wsdl:part name="accCustParameters" element="tns:accCust" />
+	</wsdl:message>
+	<wsdl:message name="accCustResponseMsg">
+		<wsdl:part name="accCustResult" element="tns:accCustResponse"/>
+	</wsdl:message>
+	<wsdl:message name="accCustFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="cardCustRequestMsg">
+		<wsdl:part name="cardCustParameters" element="tns:cardCust" />
+	</wsdl:message>
+	<wsdl:message name="cardCustResponseMsg">
+		<wsdl:part name="cardCustResult" element="tns:cardCustResponse"/>
+	</wsdl:message>
+	<wsdl:message name="cardCustFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="custRequestMsg">
+		<wsdl:part name="custParameters" element="tns:cust" />
+	</wsdl:message>
+	<wsdl:message name="custResponseMsg">
+		<wsdl:part name="custResult" element="tns:custResponse"/>
+	</wsdl:message>
+	<wsdl:message name="custFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="clientEmployeeInfoRequestMsg">
+		<wsdl:part name="clientEmployeeInfoParameters" element="tns:clientEmployeeInfo" />
+	</wsdl:message>
+	<wsdl:message name="pupayRequestMsg">
+		<wsdl:part name="pupayParameters" element="tns:pupay" />
+	</wsdl:message>
+	<wsdl:message name="pupayResponseMsg">
+		<wsdl:part name="pupayResult" element="tns:pupayResponse"/>
+	</wsdl:message>
+	<wsdl:message name="pupayFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="pdrRequestMsg">
+		<wsdl:part name="pdrParameters" element="tns:pdr" />
+	</wsdl:message>
+	<wsdl:message name="pdrResponseMsg">
+		<wsdl:part name="pdrResult" element="tns:pdrResponse"/>
+	</wsdl:message>
+	<wsdl:message name="pdrFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="platporRequestMsg">
+		<wsdl:part name="platporParameters" element="tns:platpor" />
+	</wsdl:message>
+	<wsdl:message name="platporResponseMsg">
+		<wsdl:part name="platporResult" element="tns:platporResponse"/>
+	</wsdl:message>
+	<wsdl:message name="platporFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="stmRequestMsg">
+		<wsdl:part name="stmParameters" element="tns:stm" />
+	</wsdl:message>
+	<wsdl:message name="stmResponseMsg">
+		<wsdl:part name="stmResult" element="tns:stmResponse"/>
+	</wsdl:message>
+	<wsdl:message name="stmFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="lastOperationRequestMsg">
+		<wsdl:part name="lastOperationParameters" element="tns:lastOperation" />
+	</wsdl:message>
+	<wsdl:message name="lastOperationResponseMsg">
+		<wsdl:part name="lastOperationResult" element="tns:lastOperationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="lastOperationFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="lastOperationInfoRequestMsg">
+		<wsdl:part name="lastOperationInfoParameters" element="tns:lastOperationInfo" />
+	</wsdl:message>
+	<wsdl:message name="lastOperationInfoResponseMsg">
+		<wsdl:part name="lastOperationInfoResult" element="tns:lastOperationInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="lastOperationInfoFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="openDepositRequestMsg">
+		<wsdl:part name="openDepositParameters" element="tns:openDeposit" />
+	</wsdl:message>
+	<wsdl:message name="openDepositResponseMsg">
+		<wsdl:part name="openDepositResult" element="tns:openDepositResponse"/>
+	</wsdl:message>
+	<wsdl:message name="openDepositFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="openDepositStatusRequestMsg">
+		<wsdl:part name="openDepositStatusParameters" element="tns:openDepositStatus" />
+	</wsdl:message>
+	<wsdl:message name="openDepositStatusResponseMsg">
+		<wsdl:part name="openDepositStatusResult" element="tns:openDepositStatusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="openDepositStatusFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="closeDepositRequestMsg">
+		<wsdl:part name="closeDepositParameters" element="tns:closeDeposit" />
+	</wsdl:message>
+	<wsdl:message name="closeDepositResponseMsg">
+		<wsdl:part name="closeDepositResult" element="tns:closeDepositResponse"/>
+	</wsdl:message>
+	<wsdl:message name="closeDepositFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="inqCurrRequestMsg">
+		<wsdl:part name="inqCurrParameters" element="tns:inqCurrRequest" />
+	</wsdl:message>
+	<wsdl:message name="inqCurrResponseMsg">
+		<wsdl:part name="inqCurrResult" element="tns:inqCurrResponse"/>
+	</wsdl:message>
+	<wsdl:message name="inqCurrFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="inqConfRequestMsg">
+		<wsdl:part name="inqConfParameters" element="tns:inqConfRequest" />
+	</wsdl:message>
+	<wsdl:message name="inqConfResponseMsg">
+		<wsdl:part name="inqConfResult" element="tns:inqConfResponse"/>
+	</wsdl:message>
+	<wsdl:message name="inqConfFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="dealpassCloseRequestMsg">
+		<wsdl:part name="dealpassCloseParameters" element="tns:dealpassCloseRequest" />
+	</wsdl:message>
+	<wsdl:message name="dealpassCloseResponseMsg">
+		<wsdl:part name="dealpassCloseResult" element="tns:dealpassCloseResponse"/>
+	</wsdl:message>
+	<wsdl:message name="dealpassCloseFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="dealPassRenewRequestMsg">
+		<wsdl:part name="dealPassRenewParameters" element="tns:dealPassRenew" />
+	</wsdl:message>
+	<wsdl:message name="dealPassRenewResponseMsg">
+		<wsdl:part name="dealPassRenewResult" element="tns:dealPassRenewResponse"/>
+	</wsdl:message>
+	<wsdl:message name="dealPassRenewFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="dealPassCreditRequestMsg">
+		<wsdl:part name="dealPassCreditParameters" element="tns:dealPassCredit" />
+	</wsdl:message>
+	<wsdl:message name="dealPassCreditResponseMsg">
+		<wsdl:part name="dealPassCreditResult" element="tns:dealPassCreditResponse"/>
+	</wsdl:message>
+	<wsdl:message name="dealPassCreditFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="dealPassContractRequestMsg">
+		<wsdl:part name="dealPassContractParameters" element="tns:dealPassContract" />
+	</wsdl:message>
+	<wsdl:message name="dealPassContractResponseMsg">
+		<wsdl:part name="dealPassContractResult" element="tns:dealPassContractResponse"/>
+	</wsdl:message>
+	<wsdl:message name="dealPassContractFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="paymentRequestOutgoingRequestMsg">
+		<wsdl:part name="paymentRequestOutgoingParameters" element="tns:paymentRequestOutgoingRequest" />
+	</wsdl:message>
+	<wsdl:message name="paymentRequestOutgoingResponseMsg">
+		<wsdl:part name="paymentRequestOutgoingwResult" element="tns:paymentRequestOutgoingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="paymentRequestOutgoingFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="companyInfoRequestMessage">
+		<wsdl:part name="companyInfoParameters" element="tns:companyInfo"/>
+	</wsdl:message>
+	<wsdl:message name="companyInfoResponseMessage">
+		<wsdl:part name="companyInfoResult" element="tns:companyInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="companyInfoFaultMessage">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="ccratesRequestMsg">
+		<wsdl:part name="ccratesParameters" element="tns:ccrates" />
+	</wsdl:message>
+	<wsdl:message name="ccratesResponseMsg">
+		<wsdl:part name="ccratesResult" element="tns:ccratesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ccratesFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="paymentScheduleRequestMsg">
+		<wsdl:part name="paymentScheduleParameters" element="tns:paymentSchedule" />
+	</wsdl:message>
+	<wsdl:message name="paymentScheduleResponseMsg">
+		<wsdl:part name="paymentScheduleResult" element="tns:paymentScheduleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="paymentScheduleFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="mails2ClientListRequestMsg">
+		<wsdl:part name="mails2ClientListParameters" element="tns:mails2ClientList" />
+	</wsdl:message>
+	<wsdl:message name="mails2ClientListResponseMsg">
+		<wsdl:part name="mails2ClientListResult" element="tns:mails2ClientListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="mails2ClientListFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="cardInfoRequestMsg">
+		<wsdl:part name="cardinfoParameters" element="tns:cardInfo"/>
+	</wsdl:message>
+	<wsdl:message name="cardInfoResponseMsg">
+		<wsdl:part name="cardinfoResult" element="tns:cardInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="cardInfoFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="accInfoRequestMsg">
+		<wsdl:part name="cardinfoParameters" element="tns:accInfo"/>
+	</wsdl:message>
+	<wsdl:message name="accInfoResponseMsg">
+		<wsdl:part name="accinfoResult" element="tns:accInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="accInfoFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="mail2bankULRequestMessage">
+		<wsdl:part name="mail2bankULParameters" element="tns:mail2bankUL"/>
+	</wsdl:message>
+	<wsdl:message name="mail2bankULResponseMessage">
+		<wsdl:part name="mail2bankULResult" element="tns:mail2bankULResponse"/>
+	</wsdl:message>
+	<wsdl:message name="mail2bankULFaultMessage">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+	<wsdl:message name="clientInfoByPhoneRequestMsg">
+		<wsdl:part name="clientInfoByPhoneParameters" element="tns:clientInfoByPhone"/>
+	</wsdl:message>
+	<wsdl:message name="clientInfoByPhoneResponseMsg">
+		<wsdl:part name="clientInfoByPhoneResult" element="tns:clientInfoByPhoneResponse"/>
+	</wsdl:message>
+	<wsdl:message name="clientInfoByPhoneFaultMsg">
+		<wsdl:part name="fault" element="tns:ErrorElement"/>
+	</wsdl:message>
+
+	<wsdl:portType name="ABSInterfacePortType">
+		<wsdl:operation name="accacc">
+			<wsdl:documentation>перевод между счетами /картами / депозитами клиента без конверсии (FL)</wsdl:documentation>
+			<wsdl:input name="accaccRequest" message="tns:accaccRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="accaccResponse" message="tns:accaccResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:accaccFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="accountList">
+			<wsdl:documentation>получение списка счетов клиента (UL, FL)</wsdl:documentation>
+			<wsdl:input name="accountListRequest" message="tns:accountListRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="accountListResponse" message="tns:accountListResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:accountListFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cardList">
+			<wsdl:documentation>получение списка карт клиента (FL)</wsdl:documentation>
+			<wsdl:input name="cardListRequest" message="tns:cardListRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="cardListResponse" message="tns:cardListResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:cardListFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="creditList">
+			<wsdl:documentation>получение списка кредитов клиента (UL, FL)</wsdl:documentation>
+			<wsdl:input name="creditListRequest" message="tns:creditListRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="creditListResponse" message="tns:creditListResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:creditListFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="depositList">
+			<wsdl:documentation>получение списка вкладов клиента (UL, FL)</wsdl:documentation>
+			<wsdl:input name="depositListRequest" message="tns:depositListRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="depositListResponse" message="tns:depositListResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:depositListFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="check">
+			<wsdl:documentation>получение статуса исполнения документа (UL, FL)</wsdl:documentation>
+			<wsdl:input name="checkRequest" message="tns:checkRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="checkResponse" message="tns:checkResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:checkFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cconv">
+			<wsdl:input name="cconvRequest" message="tns:cconvRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="cconvResponse" message="tns:cconvResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:cconvFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cancel">
+			<wsdl:documentation>отзыв ранее выгруженного документа (UL, FL)</wsdl:documentation>
+			<wsdl:input name="cancelRequest" message="tns:cancelRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="cancelResponse" message="tns:cancelResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:cancelFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="contractDepositCancel">
+			<wsdl:documentation>отзыв ранее выгруженного заявления на открытие депозита (UL, FL)</wsdl:documentation>
+			<wsdl:input name="contractDepositCancelRequest" message="tns:contractDepositCancelRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="contractDepositCancelResponse" message="tns:contractDepositCancelResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:contractDepositCancelFaultMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="accCust">
+			<wsdl:documentation>получение клиента владельца счета (FL)</wsdl:documentation>
+			<wsdl:input name="accCustRequest" message="tns:accCustRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="accCustResponse" message="tns:accCustResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:accCustFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cardCust">
+			<wsdl:documentation>получение номера клиента владельца карты (FL)</wsdl:documentation>
+			<wsdl:input name="cardCustRequest" message="tns:cardCustRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="cardCustResponse" message="tns:cardCustResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:cardCustFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cust">
+			<wsdl:documentation>получение информации по физ. лицу (FL)</wsdl:documentation>
+			<wsdl:input name="custRequest" message="tns:custRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="custResponse" message="tns:custResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:custFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="clientEmployeeInfo">
+			<wsdl:documentation>Получение информаци о сотруднике ЮЛ</wsdl:documentation>
+			<wsdl:input  name="clientEmployeeInfoRequest"  message="tns:clientEmployeeInfoRequestMsg"/>
+			<wsdl:output name="clientEmployeeInfoResponse" message="tns:custResponseMsg"/>
+			<wsdl:fault  name="fault"                      message="tns:custFaultMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="pupay">
+			<wsdl:documentation>оплата услуг (FL)</wsdl:documentation>
+			<wsdl:input name="pupayRequest" message="tns:pupayRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="pupayResponse" message="tns:pupayResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:pupayFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="platpor">
+			<wsdl:documentation>рублевое платежное поручение (UL)</wsdl:documentation>
+			<wsdl:input name="platporRequest" message="tns:platporRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="platporResponse" message="tns:platporResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:platporFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="pdr">
+			<wsdl:documentation>рублевый перевод внутри/за пределы банка (FL)</wsdl:documentation>
+			<wsdl:input name="pdrRequest" message="tns:pdrRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="pdrResponse" message="tns:pdrResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:pdrFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="stm">
+			<wsdl:documentation>получение выписки по счетам (UL, FL)</wsdl:documentation>
+			<wsdl:input name="stmRequest" message="tns:stmRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="stmResponse" message="tns:stmResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:stmFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="lastOperation">
+			<wsdl:documentation>получение последних операций по счетам (UL, FL)</wsdl:documentation>
+			<wsdl:input name="lastOperationRequest" message="tns:lastOperationRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="lastOperationResponse" message="tns:lastOperationResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:lastOperationFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="lastOperationInfo">
+			<wsdl:documentation>получение операций по счетам (UL, FL) по идентификаторам в АБС</wsdl:documentation>
+			<wsdl:input name="lastOperationInfoRequest" message="tns:lastOperationInfoRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="lastOperationInfoResponse" message="tns:lastOperationInfoResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:lastOperationInfoFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="openDeposit">
+			<wsdl:documentation>заявление на открытие вклада (FL)</wsdl:documentation>
+			<wsdl:input name="openDepositRequest" message="tns:openDepositRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="openDepositResponse" message="tns:openDepositResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:openDepositFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="openDepositStatus">
+			<wsdl:documentation>проверка статуса заявления на открытие вклада (FL)</wsdl:documentation>
+			<wsdl:input name="openDepositStatusRequest" message="tns:openDepositStatusRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="openDepositStatusResponse" message="tns:openDepositStatusResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:openDepositStatusFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="closeDeposit">
+			<wsdl:documentation>заявление на досрочное расторжение вклада (FL)</wsdl:documentation>
+			<wsdl:input name="closeDepositRequest" message="tns:closeDepositRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="closeDepositResponse" message="tns:closeDepositResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:closeDepositFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="inqCurr">
+			<wsdl:documentation>справка о валютных операциях (UL)</wsdl:documentation>
+			<wsdl:input name="inqCurrRequest" message="tns:inqCurrRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="inqCurrResponse" message="tns:inqCurrResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:inqCurrFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="inqConf">
+			<wsdl:documentation>справка о подтверждающих документах (UL)</wsdl:documentation>
+			<wsdl:input name="inqConfRequest" message="tns:inqConfRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="inqConfResponse" message="tns:inqConfResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:inqConfFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="dealPassRenew">
+			<wsdl:documentation>переоформление паспорта сделки (UL)</wsdl:documentation>
+			<wsdl:input name="dealPassRenewRequest" message="tns:dealPassRenewRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="dealPassRenewResponse" message="tns:dealPassRenewResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:dealPassRenewFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="dealPassCredit">
+			<wsdl:documentation>паспорт сделки по кредитному договору (UL)</wsdl:documentation>
+			<wsdl:input name="dealPassCreditRequest" message="tns:dealPassCreditRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="dealPassCreditResponse" message="tns:dealPassCreditResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:dealPassCreditFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="dealPassContract">
+			<wsdl:documentation>паспорт сделки по контракту (UL)</wsdl:documentation>
+			<wsdl:input name="dealPassContractRequest" message="tns:dealPassContractRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="dealPassContractResponse" message="tns:dealPassContractResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:dealPassContractFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="dealpassClose">
+			<wsdl:documentation>заявления о закрытии паспорта сделки (UL)</wsdl:documentation>
+			<wsdl:input name="dealpassCloseRequest" message="tns:dealpassCloseRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="dealpassCloseResponse" message="tns:dealpassCloseResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:dealpassCloseFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="paymentRequestOutgoing">
+			<wsdl:documentation>Платежное требование исходящее (UL)</wsdl:documentation>
+			<wsdl:input name="paymentRequestOutgoingRequest" message="tns:paymentRequestOutgoingRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="paymentRequestOutgoingResponse" message="tns:paymentRequestOutgoingResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:paymentRequestOutgoingFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="companyInfo">
+			<wsdl:documentation>Получение информации по юридическому лицу</wsdl:documentation>
+			<wsdl:input name="companyInfoRequest" message="tns:companyInfoRequestMessage"/>
+			<wsdl:output name="companyInfoResponse" message="tns:companyInfoResponseMessage"/>
+			<wsdl:fault name="fault" message="tns:companyInfoFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ccrates">
+			<wsdl:documentation>получение курсов валют безналичного обмена (UL, FL)</wsdl:documentation>
+			<wsdl:input name="ccratesRequest" message="tns:ccratesRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="ccratesResponse" message="tns:ccratesResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:ccratesFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="paymentSchedule">
+			<wsdl:documentation>получение графика погашения кредита (UL, FL).</wsdl:documentation>
+			<wsdl:input name="paymentScheduleRequest" message="tns:paymentScheduleRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="paymentScheduleResponse" message="tns:paymentScheduleResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:paymentScheduleFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="mails2ClientList">
+			<wsdl:documentation>получение графика погашения кредита (UL, FL).</wsdl:documentation>
+			<wsdl:input name="mails2ClientListRequest" message="tns:mails2ClientListRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="mails2ClientListResponse" message="tns:mails2ClientListResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="fault" message="tns:mails2ClientListFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cardInfo">
+			<wsdl:documentation>Получение информации по номеру карты (кастомизация хлынова)</wsdl:documentation>
+			<wsdl:input name="cardInfoRequest" message="tns:cardInfoRequestMsg"/>
+			<wsdl:output name="cardInfoResponse" message="tns:cardInfoResponseMsg"/>
+			<wsdl:fault name="fault" message="tns:cardInfoFaultMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="accInfo">
+			<wsdl:documentation>Получение информации по номеру счета (кастомизация хлынова)</wsdl:documentation>
+			<wsdl:input name="accInfoRequest" message="tns:accInfoRequestMsg"/>
+			<wsdl:output name="accInfoResponse" message="tns:accInfoResponseMsg"/>
+			<wsdl:fault name="fault" message="tns:accInfoFaultMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="mail2bankUL">
+			<wsdl:documentation>Отправка письма ЮЛ в банк</wsdl:documentation>
+			<wsdl:input name="mail2bankULRequest" message="tns:mail2bankULRequestMessage"/>
+			<wsdl:output name="mail2bankULResponse" message="tns:mail2bankULResponseMessage"/>
+			<wsdl:fault name="fault" message="tns:mail2bankULFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="clientInfoByPhone">
+			<wsdl:documentation>Получение информации о клиенте по номеру телефона</wsdl:documentation>
+			<wsdl:input name="clientInfoByPhone" message="tns:clientInfoByPhoneRequestMsg"/>
+			<wsdl:output name="clientInfoByPhoneResponse" message="tns:clientInfoByPhoneResponseMsg"/>
+			<wsdl:fault name="fault" message="tns:clientInfoByPhoneFaultMsg"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ABSInterfaceBinding" type="tns:ABSInterfacePortType">
+		<soap:binding style="document"
+		              transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="accacc">
+			<wsdl:documentation>перевод между счетами /картами / депозитами клиента без конверсии (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="accountList">
+			<wsdl:documentation>получение списка счетов клиента (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cardList">
+			<wsdl:documentation>получение списка карт клиента (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="creditList">
+			<wsdl:documentation>получение списка кредитов клиента (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="depositList">
+			<wsdl:documentation>получение списка вкладов клиента (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="check">
+			<wsdl:documentation>получение статуса исполнения документа (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cconv">
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cancel">
+			<wsdl:documentation>отзыв ранее выгруженного документа (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="contractDepositCancel">
+			<wsdl:documentation>отзыв ранее выгруженного заявления на открытие депозита (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="accCust">
+			<wsdl:documentation>получение клиента владельца счета (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cardCust">
+			<wsdl:documentation>получение номера клиента владельца карты (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cust">
+			<wsdl:documentation>получение информации по физ. лицу (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="clientEmployeeInfo">
+			<wsdl:documentation>Получение информации о сотруднике ЮЛ</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="pupay">
+			<wsdl:documentation>оплата услуг (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="platpor">
+			<wsdl:documentation>рублевое платежное поручение (UL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="pdr">
+			<wsdl:documentation>рублевый перевод внутри/за пределы банка (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="stm">
+			<wsdl:documentation>получение выписки по счетам (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="lastOperation">
+			<wsdl:documentation>получение списка последних операций по счетам (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="lastOperationInfo">
+			<wsdl:documentation>получение списка операций по счетам (UL, FL) по инентификаторам в АБС</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="openDeposit">
+			<wsdl:documentation>заявление на открытие вклада (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="openDepositStatus">
+			<wsdl:documentation>проверка статуса заявления на открытие вклада (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="closeDeposit">
+			<wsdl:documentation>заявление на досрочное расторжение вклада (FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="inqCurr">
+			<wsdl:documentation>справка о валютных операциях (UL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="dealPassRenew">
+			<wsdl:documentation>переоформление паспорта сделки (UL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="dealPassCredit">
+			<wsdl:documentation>паспорт сделки по кредитному договору (UL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="dealPassContract">
+			<wsdl:documentation>паспорт сделки по контракту (UL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="inqConf">
+			<wsdl:documentation>справка о подтверждающих документах (UL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="dealpassClose">
+			<wsdl:documentation>заявления о закрытии паспорта сделки (UL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="paymentRequestOutgoing">
+			<wsdl:documentation>Платежное требование исходящее (UL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="companyInfo">
+			<wsdl:documentation>Получение информации о клиенте юр. лица </wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ccrates">
+			<wsdl:documentation>получение курсов валют безналичного обмена (UL, FL)</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="paymentSchedule">
+			<wsdl:documentation>получение графика погашения кредита (UL, FL).</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="mails2ClientList">
+			<wsdl:documentation>письма.</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cardInfo">
+			<xsd:documentation>Получение информации по номеру карты</xsd:documentation>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="accInfo">
+			<xsd:documentation>Получение информации по номеру счета</xsd:documentation>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="mail2bankUL">
+			<wsdl:documentation>Отправка письма ЮЛ в банк</wsdl:documentation>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="clientInfoByPhone">
+			<xsd:documentation>Получение информации о клиенте по номеру телефона</xsd:documentation>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ABSInterfaceService">
+		<wsdl:port name="ABSInterfacePort" binding="tns:ABSInterfaceBinding">
+			<soap:address location="http://localhost:8084/services/integration/abs" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

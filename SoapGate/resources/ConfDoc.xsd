@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="confDocType">
+        <xsd:sequence>
+            <xsd:element name="numberLine" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation>№ строки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="docNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер ПД</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="docDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата ПД</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="docTypeCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код вида документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="deliveryFlag" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation>Признак поставки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="expectDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Ожидаемый срок</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="totalAmountDocCurrency" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Общая сумма в валюте документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="amountDocCurrency" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма в валюте документа, соответствующая признаку поставки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="docCurrencyCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Цифровой код валюты документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="totalAmountContractCurrency" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Общая сумма в валюте контракта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="amountContractCurrency" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма в валюте контракта, соответствующая признаку поставки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="contractCurrecyCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Цифровой код валюты контракта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="countryCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Страна грузоотправителя (грузополучателя)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="remark" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Примечание</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

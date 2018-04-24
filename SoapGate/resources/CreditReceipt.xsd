@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="CreditReceipt">
+        <xsd:sequence>
+            <xsd:element name="beneficiaryName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Наименование нерезидента</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="beneficiaryCountryCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код страны нерезидента</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="isCreditAmount" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>В счет процентных платежей</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="creditAmount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма предоставляемая по кредиту</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="creditPercent" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Доля в общей сумме кредита</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

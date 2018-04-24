@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+     <endpoint name="Currency" implementation="service.impl.CurrencyImpl" url-pattern="/Currency"/>
+     <endpoint name="Payment" implementation="service.impl.PaymentImpl" url-pattern="/Payment"/>
+     <endpoint name="Card" implementation="service.impl.CardImpl" url-pattern="/Card"/>
+     <endpoint name="ABSInterface" implementation="service.impl.ABSInterfaceImpl" url-pattern="/ABSInterface"/>
+     <endpoint name="GMP" implementation="service.impl.FTGMPADTWSPORTTYPEImpl" url-pattern="/GMP"/>
+     <endpoint name="ZHKH" implementation="service.impl.FTGISZHKHREQPROCWSPORTTYPEImpl" url-pattern="/ZHKH"/>
+</endpoints>

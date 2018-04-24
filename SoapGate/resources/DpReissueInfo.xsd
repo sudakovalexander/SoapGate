@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="DpReissueInfo">
+        <xsd:sequence>
+            <xsd:element name="reissueDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата переоформления ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="groundDocDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата документа-основания</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="groundDocNum" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер документа-основания</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

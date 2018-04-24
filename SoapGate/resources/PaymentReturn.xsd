@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="PaymentReturn">
+        <xsd:sequence>
+            <xsd:element name="percentPayDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата платежа в счет основного долга</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="percentPayAmount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма платежа в счет основного долга</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="creditPayDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата платежа в счет процентных платежей</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="creditPayAmount" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма платежа в счет процентных платежей</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="paySpecConditions" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Особые условия</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

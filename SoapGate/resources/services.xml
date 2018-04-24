@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE xml><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.7.4  Built on : Oct 21, 2016 (10:47:34 BST) --><serviceGroup>
+    <service name="ABSInterfaceService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="absinterface.ABSInterfaceServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">absinterface.ABSInterfaceServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="accountList" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accountListResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accountList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="AccountListFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accountList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="AccountListFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accountList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="accountListFaultMsg">urn:accountListaccountListFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="cardList" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cardListResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cardList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CardListFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cardList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CardListFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cardList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="cardListFaultMsg">urn:cardListcardListFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="closeDeposit" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/closeDepositResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/closeDeposit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CloseDepositFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/closeDeposit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CloseDepositFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/closeDeposit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="closeDepositFaultMsg">urn:closeDepositcloseDepositFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="cust" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/custResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CustFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CustFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="custFaultMsg">urn:custcustFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="pdr" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/pdrResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/pdr/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PdrFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/pdr/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PdrFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/pdr/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="pdrFaultMsg">urn:pdrpdrFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="openDepositStatus" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/openDepositStatusResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/openDepositStatus/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="OpenDepositStatusFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/openDepositStatus/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="OpenDepositStatusFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/openDepositStatus/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="openDepositStatusFaultMsg">urn:openDepositStatusopenDepositStatusFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="cardCust" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cardCustResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cardCust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CardCustFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cardCust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CardCustFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cardCust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="cardCustFaultMsg">urn:cardCustcardCustFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="contractDepositCancel" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/contractDepositCancelResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/contractDepositCancel/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="ContractDepositCancelFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/contractDepositCancel/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="ContractDepositCancelFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/contractDepositCancel/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="contractDepositCancelFaultMsg">urn:contractDepositCancelcontractDepositCancelFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="companyInfo" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/companyInfoResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/companyInfo/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CompanyInfoFaultMessage">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/companyInfo/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CompanyInfoFaultMessage_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/companyInfo/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="companyInfoFaultMessage">urn:companyInfocompanyInfoFaultMessage</faultActionMapping>
+        </operation>
+        <operation name="pupay" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/pupayResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/pupay/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PupayFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/pupay/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PupayFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/pupay/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="pupayFaultMsg">urn:pupaypupayFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="stm" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/stmResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/stm/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="StmFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/stm/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="StmFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/stm/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="stmFaultMsg">urn:stmstmFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="creditList" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/creditListResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/creditList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CreditListFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/creditList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CreditListFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/creditList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="creditListFaultMsg">urn:creditListcreditListFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="dealPassCredit" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassCreditResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassCredit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DealPassCreditFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassCredit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DealPassCreditFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassCredit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="dealPassCreditFaultMsg">urn:dealPassCreditdealPassCreditFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="check" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/checkResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/check/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CheckFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/check/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CheckFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/check/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="checkFaultMsg">urn:checkcheckFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="platpor" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/platporResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/platpor/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PlatporFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/platpor/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PlatporFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/platpor/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="platporFaultMsg">urn:platporplatporFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="dealPassContract" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassContractResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassContract/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DealPassContractFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassContract/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DealPassContractFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassContract/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="dealPassContractFaultMsg">urn:dealPassContractdealPassContractFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="depositList" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/depositListResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/depositList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DepositListFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/depositList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DepositListFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/depositList/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="depositListFaultMsg">urn:depositListdepositListFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="openDeposit" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/openDepositResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/openDeposit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="OpenDepositFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/openDeposit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="OpenDepositFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/openDeposit/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="openDepositFaultMsg">urn:openDepositopenDepositFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="ccrates" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/ccratesResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/ccrates/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CcratesFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/ccrates/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CcratesFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/ccrates/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="ccratesFaultMsg">urn:ccratesccratesFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="paymentSchedule" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/paymentScheduleResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/paymentSchedule/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PaymentScheduleFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/paymentSchedule/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PaymentScheduleFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/paymentSchedule/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="paymentScheduleFaultMsg">urn:paymentSchedulepaymentScheduleFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="inqCurr" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/inqCurrResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/inqCurr/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="InqCurrFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/inqCurr/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="InqCurrFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/inqCurr/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="inqCurrFaultMsg">urn:inqCurrinqCurrFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="accacc" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accaccResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accacc/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="AccaccFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accacc/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="AccaccFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accacc/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="accaccFaultMsg">urn:accaccaccaccFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="cancel" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cancelResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cancel/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CancelFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cancel/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CancelFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/cancel/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="cancelFaultMsg">urn:cancelcancelFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="clientEmployeeInfo" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/clientEmployeeInfoResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/clientEmployeeInfo/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CustFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/clientEmployeeInfo/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="CustFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/clientEmployeeInfo/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="custFaultMsg">urn:clientEmployeeInfocustFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="paymentRequestOutgoing" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/paymentRequestOutgoingResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/paymentRequestOutgoing/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PaymentRequestOutgoingFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/paymentRequestOutgoing/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="PaymentRequestOutgoingFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/paymentRequestOutgoing/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="paymentRequestOutgoingFaultMsg">urn:paymentRequestOutgoingpaymentRequestOutgoingFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="dealpassClose" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealpassCloseResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealpassClose/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DealpassCloseFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealpassClose/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DealpassCloseFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealpassClose/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="dealpassCloseFaultMsg">urn:dealpassClosedealpassCloseFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="dealPassRenew" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassRenewResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassRenew/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DealPassRenewFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassRenew/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="DealPassRenewFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/dealPassRenew/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="dealPassRenewFaultMsg">urn:dealPassRenewdealPassRenewFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="accCust" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accCustResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accCust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="AccCustFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accCust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="AccCustFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/accCust/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="accCustFaultMsg">urn:accCustaccCustFaultMsg</faultActionMapping>
+        </operation>
+        <operation name="inqConf" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://custsystems.com/integration/abs/ABSInterface">
+            <actionMapping>\"\"</actionMapping>
+            <outputActionMapping>http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/inqConfResponse</outputActionMapping>
+            <faultActionMapping faultName="fault">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/inqConf/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="InqConfFaultMsg">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/inqConf/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="InqConfFaultMsg_Exception">http://custsystems.com/integration/abs/ABSInterface/ABSInterfacePortType/inqConf/Fault/fault</faultActionMapping>
+            <faultActionMapping faultName="inqConfFaultMsg">urn:inqConfinqConfFaultMsg</faultActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

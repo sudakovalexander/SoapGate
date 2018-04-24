@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:abs="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:include schemaLocation="Attachments.xsd"/>
+    <xsd:include schemaLocation="NonResidentInfo.xsd"/>
+    <xsd:include schemaLocation="DpInfo.xsd"/>
+    <xsd:include schemaLocation="ContractInfo.xsd"/>
+    <xsd:include schemaLocation="DpReissueInfo.xsd"/>
+    <xsd:complexType name="DealPassContractRequest">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="reqID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="docNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="docId" type="xsd:string"/>
+            <xsd:element name="docDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SubSys" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="BranchId" type="xsd:string"/>
+            <xsd:element name="docBankDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Дата и время поступления в банк документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="employee" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Исполнитель</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="inn" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>ИНН</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="kpp" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>КПП</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dealPassContractInfo" type="abs:ContractInfo">
+                <xsd:annotation>
+                    <xsd:documentation>Данные по контракту ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="address" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Адрес</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="nonResidentInfo">
+                <xsd:annotation>
+                    <xsd:documentation>Реквизиты нерезидента (нерезидентов)</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:NonResidentInfo"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dpInfo">
+                <xsd:annotation>
+                    <xsd:documentation>Сведения об оформлении, переводе и закрытии ПС</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:DpInfo"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dpReissueInfo">
+                <xsd:annotation>
+                    <xsd:documentation>Сведения о переоформлении ПС</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:DpReissueInfo"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="abs:files"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

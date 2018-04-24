@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:abs="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:include schemaLocation="Attachments.xsd"/>
+    <xsd:include schemaLocation="DealpassNumber.xsd"/>
+    <xsd:include schemaLocation="DocGroundReissue.xsd"/>
+    <xsd:include schemaLocation="DealPassContrInfoChange.xsd"/>
+    <xsd:include schemaLocation="DealPassCredInfoChange.xsd"/>
+    <xsd:complexType name="DealPassRenewRequest">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="reqID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="docNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="docId" type="xsd:string"/>
+            <xsd:element name="docDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SubSys" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CustomerID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="BranchId" type="xsd:string"/>
+            <xsd:element name="docBankDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Дата и время поступления в банк документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="inn" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>ИНН клиента</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="fullname" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="accNumber" type="xsd:string"/>
+            <xsd:element name="bankBik" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>БИК банка</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="bankCorrAccount" type="xsd:string"/>
+            <xsd:element name="bankName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Корреспондентский счет банка</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="bankPlace" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название банка</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="employee" type="xsd:string"/>
+            <xsd:element name="phone" type="xsd:string"/>
+            <xsd:element name="description" type="xsd:string"/>
+            <xsd:element name="typeDp" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Вид паспорта сделки: 0 - по кредитному договору , 1 - по контракту</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="dpNum" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="dpDate" type="xsd:string"/>
+                </xsd:sequence>
+                <xsd:element minOccurs="0" name="dealpassNumbers">
+                    <xsd:annotation>
+                        <xsd:documentation>Список ПС</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded" name="item" type="abs:DealpassNumberType"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:choice>
+                <xsd:element minOccurs="0" name="dpCredInfoChanges">
+                    <xsd:annotation>
+                        <xsd:documentation>Список изменений для ПС по кредитному договору</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded" name="item" type="abs:dpCredInfoChange"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="dpContrInfoChanges">
+                    <xsd:annotation>
+                        <xsd:documentation>Список изменений для ПС по контракту</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded" name="item" type="abs:dpContrInfoChange"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element minOccurs="0" name="docsGroundReissue">
+                <xsd:annotation>
+                    <xsd:documentation>Документы-основания для переоформления</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" name="item" type="abs:docGroundReissue"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="abs:files"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

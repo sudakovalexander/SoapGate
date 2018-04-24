@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="CreditTranche">
+        <xsd:sequence>
+            <xsd:element name="tranPayPeriod" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код привлечения (предоставления) транша</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="receiptDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Ожидаемая дата поступления</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="trancheAmount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма транша</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

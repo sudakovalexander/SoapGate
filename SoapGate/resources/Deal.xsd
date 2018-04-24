@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:complexType name="dealType">
+        <xsd:sequence>
+            <xsd:element name="numberLine" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation>№ строки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="payDirection" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation>Признак платежа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="docNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>№ уведомления</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="transferFunds" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>Списания/зачисление резидентом денежных средств с одного счета резидента на другой его счет, открытые в этом или другом уполномоченном банке</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="transferDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата (Уведомл. о зачисл./распоряж. на списание)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="operationCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код вида операции</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="operationDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата операции</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="amount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма операции</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="payCurrencyCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код валюты платежа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dealPassportNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер ПС</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:sequence minOccurs="0">
+                <xsd:element name="contractNumber" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>Номер договора</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="contractDate" type="xsd:date">
+                    <xsd:annotation>
+                        <xsd:documentation>Дата договора</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:element minOccurs="0" name="amountCurrencyContract" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма в валюте цены контракта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="currencyCodeContract" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код валюты контракта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="expectDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Ожидаемый срок</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dateRefundPrepayment" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Срок возврата аванса</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="remark" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Примечание</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

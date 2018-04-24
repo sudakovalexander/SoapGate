@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:attach="http://custsystems.com/integration/abs" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://custsystems.com/integration/abs">
+    <xsd:element name="files">
+        <xsd:annotation>
+            <xsd:documentation>Приложенные файлы</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="file" type="attach:fileType"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="fileType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="file_id" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Идентификатор файла</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="file_path" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Путь к файлу</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="type" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип содержимого файла</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="fileHash" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Хэш файла в хранилище данных</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="comment" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Комментарий к файлу</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="file_caption" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название типа файла</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="file_code" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код типа файла</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
